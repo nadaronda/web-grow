@@ -1,6 +1,9 @@
 import React from "react"
+
 function HomePage() {
-    return <div>Welcome to Next.js!</div>
+    return (<>
+    <h1>bienvenido</h1>
+    </>)
   }
   
   export default HomePage
