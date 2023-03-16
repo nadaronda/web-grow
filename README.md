@@ -1,6 +1,6 @@
 # Web Grow shop
 
-# Mi proyecto de final de booptcam de [Core Code School](https://www.corecode.school/)
+# Mi proyecto de final de bootcamp de [Core Code School](https://www.corecode.school/)
 
 # Indice:
 
@@ -36,7 +36,7 @@ Web Grow se trata de una pagina web, motivación de unos de mis hermanos que tie
 
 ## 5. Tabla de contenidos o índice:
 
-en proceso
+en proceso ...
 
 ## 6. Manual de instalación y deployment:
 
