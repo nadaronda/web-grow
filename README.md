@@ -81,7 +81,7 @@ Añadir estructura basica de un componente en react
 
 -   Node package manager: [npm](https://www.npmjs.com/)
 -   To run the HTML: [Vite](https://vitejs.dev/)
-
+-   [Tailwind](https://tailwindcss.com/) es un framework para trabajar estilos CSS.
 -   Lenguajes de programación: [typescript](https://www.npmjs.com/package/typescript)
 -   Otros paquetes de Node: Lodash
 
