@@ -15,18 +15,18 @@ const ActiveLink = ({ children, path }) => {
 export const Navbar = () => {
     return (
         <>
-            <nav className="w-100 bg-cyan-200">
+            <nav className=" w-100 bg-cyan-200">
                 <div className="">
                     <Link href="/" className="">
                         <ActiveLink path="/"> Home </ActiveLink>
                     </Link>
-                    <Link href="/productos" className="">
+                    <Link href="/productos" className=" text-gray-500 hover:bg-orange-300 duration-500">
                         <ActiveLink path="/productos"> Productos </ActiveLink>
                     </Link>
-                    <Link href="/semillas" className="">
+                    <Link href="/semillas" className=" text-gray-500 hover:bg-orange-300 duration-500">
                         <ActiveLink path="/semillas"> Semillas </ActiveLink>
                     </Link>
-                    <Link href="/conocenos" className="">
+                    <Link href="/conocenos" className=" text-gray-500 hover:bg-orange-300 duration-500">
                         <ActiveLink path="/conocenos"> Conocenos </ActiveLink>
                     </Link>
                 </div>
