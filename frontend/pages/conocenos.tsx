@@ -1,13 +1,10 @@
 import { Horario } from "../components/Horario"
-import Map from "../components/Map"
-import dotenv from 'dotenv';
+import Map from "../components/Map.js"
 
-dotenv.config();
 
-export const llave = parseInt(process.env.KEY)
-  
+import { llave } from "../config";
 
-require('dotenv').config()
+
 
 
 const mapURL=`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${llave}`;
@@ -17,10 +14,10 @@ function Conocenos() {
   <Horario> </Horario>
   <p>
     <Map 
-    googleMapURL={mapURL}> </Map>
+    googleMapURL={mapURL}/>
     containerElement={<div style={{height: "400px"
-    }}></div>} 
-    mapElement={<div style={{height:"100%"}}></div>}
+    }}/>} 
+    mapElement={<div style={{height:"100%"}}/>}
     loadingElement={<p>Cargando</p>}
     </p>
     </>)
