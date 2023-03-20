@@ -1,11 +1,11 @@
 
-import { db_plugin } from './db';
+import { conectDB } from "./lib/db"
 import { FastifyPluginAsync } from 'fastify';
 import fastifyFormBody from '@fastify/formbody';
 import fastifyBlipp from 'fastify-blipp';
 import { index_plugin } from './routes/index.plugin';
 import cors from '@fastify/cors';
-
+import { ProductoRouter } from "./routes/productoRouter";
 
 /*const recipes_plugin: FastifyPluginAsync = async (app) => {
     await app.register(list_recipes_plugin);
@@ -15,7 +15,7 @@ import cors from '@fastify/cors';
 
 export const main_app: FastifyPluginAsync = async (app) => {
     // Connect to MongoDB
-    app.register(db_plugin);
+    app.register(conectDB);
 
     // Register @fastify/cors
     app.register(cors);
@@ -37,4 +37,5 @@ export const main_app: FastifyPluginAsync = async (app) => {
 */
     // Execute blipp for declare all endpoints in logs
     app.blipp();// este debe ir al final 
+    app.register(ProductoRouter, { prefix: '/productos' })
 };
