@@ -8,16 +8,26 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
+    "@types/googlemaps": "^3.43.3",
+    "@types/markerclustererplus": "^2.1.33",
     "autoprefixer": "^10.4.14",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
     "next": "^13.2.4",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-maps": "*",
     "tailwindcss": "^3.2.7"
   },
   "devDependencies": {
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
     "typescript": "^5.0.2"
-  }
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+    }
 }
