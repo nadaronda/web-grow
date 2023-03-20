@@ -1,14 +1,11 @@
 import { Footer } from "../components/Footer"
+import { FormProduct } from "../components/form/Form.producto"
 
 function HomePage() {
   return (<>
 
-    <h1>
-      Hello world!
-    </h1>
-    <h2>
-      Hello world!
-    </h2>
+  
+    <FormProduct></FormProduct>
 <Footer> 
   
 </Footer>
