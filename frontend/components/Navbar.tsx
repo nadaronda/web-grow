@@ -6,30 +6,49 @@ const ActiveLink = ({ children, path }) => {
 
     let style: CSSProperties = {};
     if (router.asPath == path) {
-    style = {
-        color: "purple"
+        style = {
+            color: "purple"
+        }
     }
-}
     return <span style={style}>{children}</span>
 }
 export const Navbar = () => {
     return (
         <>
-            <nav className=" w-100 bg-cyan-200">
-                <div className="">
-                    <Link href="/" className="">
-                        <ActiveLink path="/"> Home </ActiveLink>
-                    </Link>
-                    <Link href="/productos" className=" text-gray-500 hover:bg-orange-300 duration-500">
+            <nav className=" w-100 bg-cyan-200 flex justify-between ">
+
+                <div className="px-5 py-0 m-0 rounded-full">                  
+    
+
+                    <a  href="/">
+                        <img className='rounded-full' src="/monasterio.jpg" alt="Bootstrap" width="100" />
+                    </a>
+                 
+                </div>
+                <div className='flex flex-row gap-5 place-items-center '>
+                    <div>
+                    <Link href="/productos" className=" text-gray-500  duration-500 hover:text-2xl">
                         <ActiveLink path="/productos"> Productos </ActiveLink>
                     </Link>
-                    <Link href="/semillas" className=" text-gray-500 hover:bg-orange-300 duration-500">
+                    </div>
+                    <div> <Link href="/semillas" className=" text-gray-500 duration-500 hover:text-2xl">
                         <ActiveLink path="/semillas"> Semillas </ActiveLink>
-                    </Link>
-                    <Link href="/conocenos" className=" text-gray-500 hover:bg-orange-300 duration-500">
+                    </Link></div>
+                    <div> <Link href="/conocenos" className=" text-gray-500 duration-500 hover:text-2xl">
                         <ActiveLink path="/conocenos"> Conocenos </ActiveLink>
+                    </Link></div>
+                   
+                   
+                   
+                </div>
+
+                <div className="px-5 flex  place-items-center">
+                    <Link href="/registrate" className=" text-gray-500 duration-500 hover:text-2xl">
+                        <ActiveLink path="/registrate"> Registrate </ActiveLink>
                     </Link>
                 </div>
+
+
             </nav>
 
         </>
