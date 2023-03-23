@@ -17,33 +17,33 @@ export const Navbar = () => {
         <>
             <nav className=" w-100 bg-cyan-200 flex justify-between ">
 
-                <div className="px-5 py-0 m-0 rounded-full">                  
-    
+                <div className="px-5 py-0 m-0 rounded-full " title='Inicio'>
 
-                    <a  href="/">
+
+                    <a href="/">
                         <img className='rounded-full' src="/monasterio.jpg" alt="Bootstrap" width="100" />
                     </a>
-                 
+
                 </div>
                 <div className='flex flex-row gap-5 place-items-center '>
                     <div>
-                    <Link href="/productos" className=" text-gray-500  duration-500 hover:text-2xl">
-                        <ActiveLink path="/productos"> Productos </ActiveLink>
-                    </Link>
+                        <Link href="/productos" className=" text-gray-500  duration-200 hover:text-2xl">
+                            <ActiveLink path="/productos"> Productos </ActiveLink>
+                        </Link>
                     </div>
-                    <div> <Link href="/semillas" className=" text-gray-500 duration-500 hover:text-2xl">
+                    <div> <Link href="/semillas" className=" text-gray-500 duration-200 hover:text-2xl">
                         <ActiveLink path="/semillas"> Semillas </ActiveLink>
                     </Link></div>
-                    <div> <Link href="/conocenos" className=" text-gray-500 duration-500 hover:text-2xl">
+                    <div> <Link href="/conocenos" className=" text-gray-500 duration-200 hover:text-2xl">
                         <ActiveLink path="/conocenos"> Conocenos </ActiveLink>
                     </Link></div>
-                   
-                   
-                   
+
+
+
                 </div>
 
                 <div className="px-5 flex  place-items-center">
-                    <Link href="/registrate" className=" text-gray-500 duration-500 hover:text-2xl">
+                    <Link href="/registrate" className=" text-gray-500 duration-200 hover:text-2xl">
                         <ActiveLink path="/registrate"> Registrate </ActiveLink>
                     </Link>
                 </div>

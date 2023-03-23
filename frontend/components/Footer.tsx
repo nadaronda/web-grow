@@ -1,34 +1,26 @@
 import Link from 'next/link';
-export const Footer: React.FC<{ children: any }> = ({ children }) => {
+import { AiFillInstagram } from 'react-icons/ai';
+import { BsFacebook } from 'react-icons/bs';
+import { FaReact } from 'react-icons/fa';
+import { TbBrandNextjs } from 'react-icons/tb';
+export const Footer: React.FC = () => {
     return (<>
-        <footer className='flex justify-items-center bg-lime-200 justify-around'>   
-        <div></div>
-                 <ul className='flex flex-col gap-5'>
-                <li>
-                    <Link href="https://www.instagram.com/monasteriogrowshop/" className="bg-blue-300 text-gray-500 hover:bg-orange-300 duration-500" target="_blank">
-                        <img src="/Instagram_icon.PNG" className='w-10' />
-                        Instagram
-                    </Link>
-
-                </li>
-                <li>
-                    <Link href="https://www.facebook.com/monasteriogrowshop/" className="bg-blue-300 text-gray-500 hover:bg-orange-300 duration-500 " target="_blank">
-                        <img src="/facebook-icon.jpg" className='w-10' /> Facebook
-                    </Link>
-
-                </li>
-                <li>
+        <footer className='flex flex-col justify-center  bg-lime-200 bg-opacity-50 fixed bottom-0 w-full'>
+            <div className="flex justify-center gap-5">
+                <Link href="https://www.instagram.com/monasteriogrowshop/" title='pincha para acceder' className=" text-2xl" target="_blank">
+                    <AiFillInstagram />
+                </Link>
+                <Link href="https://www.facebook.com/monasteriogrowshop/" title='pincha para acceder' className="  text-2xl" target="_blank">
+                    <BsFacebook />
+                </Link>
+                <Link title='pincha para dejarnos un comentario' href="">
                     Dejanos tu opinion
-                </li>
-            </ul>
-            <ul className='flex flex-row gap-5 border-stone-800 '>
-                <li>
-                    <img src="/react-icon.png" className='w-11' />
-                </li>
-                <li>
-                    <img src="/nextJS-icon.jpeg" className='w-24 align-text-top' />
-                </li>
-            </ul>
+                </Link>
+            </div>
+            <div className='flex flex-row justify-end gap-5'>
+                <FaReact title='React' className='text-2xl' />
+                <TbBrandNextjs title='Next JS' className='text-2xl' />
+            </div>
         </footer>
     </>)
 }
