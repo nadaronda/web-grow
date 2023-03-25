@@ -1,25 +1,19 @@
 import fastify from 'fastify'
 import pino from 'pino';
-import { PORT } from './confing';
-
+import { PORT } from './config';
+import { main_app } from './app';
 
 const server = fastify({
-  logger:pino({
+  logger: pino({
     transport: {
-        target: 'pino-pretty',
+      target: 'pino-pretty',
     },
-}),
-disableRequestLogging: true,
-ignoreTrailingSlash: true,
+  }),
+  disableRequestLogging: true,
+  ignoreTrailingSlash: true,
 });
 
-// CommonJs
-
-
-server.get('/', async (request, reply) => {
-  reply.type('application/json').code(200)
-  return { hello: 'world' }
-})
+server.register(main_app)
 
 // Server port
 server.listen({ port: PORT }).catch((e) => {
