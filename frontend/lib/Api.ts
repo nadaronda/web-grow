@@ -1,21 +1,25 @@
 import axios from 'axios'
 
-const apiBaseURL = 'http://127.0.0.1:10'
+const apiBaseURL = 'mongodb://localhost:27017/web-grow-shop'
 const api = axios.create({ baseURL: apiBaseURL })
 
-export const getProductos = async () => {
-  const res = await api.get('/producto')
+export const getProducts = async () => {
+  const res = await api.get('/products')
   return res.data
 }
 
 // hacer ruta getObjetivo
-export const addProducto = async (data) => {
+export const addProduct = async (data) => {
   console.log(`📝, la data del objetivo añadido es ${data}`)
-  const res = await api.post('/producto', data)
+  const res = await api.post('/products', data)
   return res.data
 }
 // ruta addObjetivo hecha
-export const deleteProducto = async (Id) => {
-  const res = await api.get(`/producto/${Id}/delete`)
+/*export const deleteProduct = async (Id) => {
+  const res = axios.get(`http://127.0.0.1:10/products/${Id}/delete`)
+  return res.data
+} */
+export const deleteProduct = async (id) => {
+  const res = await api.get(`/products/:${id}/delete`)
   return res.data
 }
