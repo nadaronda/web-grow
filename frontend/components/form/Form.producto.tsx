@@ -13,6 +13,8 @@ export const FormProduct: React.FC = () => {
         const Product = await addProduct(data)
 
         console.log('su producto se ha creado adecuadamente', Product)
+        /* {...register}
+         Product.active = true*/
         reset()
     })
     console.log(errors)

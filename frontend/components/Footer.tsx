@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
                     <BsFacebook />
                 </Link>
                 <Link title='pincha para dejarnos un comentario' href="">
-                    Dejanos tu opinion
+                    Déjanos tu opinión
                 </Link>
             </div>
             <div className='flex flex-row justify-end gap-5'>

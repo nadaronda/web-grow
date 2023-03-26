@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const apiBaseURL = 'mongodb://localhost:27017/web-grow-shop'
+const apiBaseURL = 'http://127.0.0.1:5000'//aqui tengo que poner la conexion de mi backend
 const api = axios.create({ baseURL: apiBaseURL })
 
 export const getProducts = async () => {
-  const res = await api.get('/products')
+  const res = await api.get("/products")
   return res.data
 }
 
