@@ -5,6 +5,7 @@ export interface iProduct extends Document {
   description: String,
   price: Number,
   active: Boolean,
+
   // add seed categorys predefinidas
 }
 
@@ -14,6 +15,7 @@ const schema = new Schema({
   description: { type: String, require: true },
   price: { type: Number, require: true },
   active: { type: Boolean, require: true },
+
 }, {
   // timestamps: true
 })
