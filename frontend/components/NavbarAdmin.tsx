@@ -13,7 +13,6 @@ export const NavbarAdmin: React.FC<{ children: any }> = ({ children }) => {
                     <LinkNavbar href="/admin/alta" path="/admin/alta" text='ALTA' />
                     <LinkNavbar href='/admin/baja' path='/admin/baja' text='BAJA' />
                 </div>
-
                 {children}
             </nav>
         </>
