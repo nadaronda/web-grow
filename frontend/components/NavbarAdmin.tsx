@@ -1,5 +1,5 @@
 import { LinkNavbar } from './LinkNavbar';
-export const NavbarAdmin: React.FC = () => {
+export const NavbarAdmin: React.FC<{ children: any }> = ({ children }) => {
     return (
         <>
             <nav className=" w-100 bg-azul flex justify-between ">
@@ -13,9 +13,7 @@ export const NavbarAdmin: React.FC = () => {
                     <LinkNavbar href="/admin/alta" path="/admin/alta" text='ALTA' />
                     <LinkNavbar href='/admin/baja' path='/admin/baja' text='BAJA' />
                 </div>
-                <div className="px-5 flex  place-items-center">
-                    <LinkNavbar href='/registrate' path='/registrate' text='Regístrate' />
-                </div>
+                {children}
             </nav>
         </>
     )

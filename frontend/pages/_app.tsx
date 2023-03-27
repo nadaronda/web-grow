@@ -5,11 +5,16 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { NavbarAdmin } from "../components/NavbarAdmin";
 import { Global } from "@emotion/react";
+import Registro from "../components/Registro";
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps, initialUser }) {
   return (
     <>
-      <Global styles={`
+
+      <UserProvider user={initialUser}>
+        <UserProvider />
+        <Global styles={`
       @import url('https://fonts.googleapis.com/css2?family=Anton&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
       
       body{
@@ -17,12 +22,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         font-size: 20px;
       }
       `}
-      />
-      <MetaDatos />
-      <Navbar></Navbar>
-      <NavbarAdmin></NavbarAdmin>
-      <Component {...pageProps} />
-      <Footer></Footer>
+        />
+        <MetaDatos />
+        <Navbar>
+          <Component {...pageProps} />
+        </Navbar>
+        <Footer />
+      </UserProvider>
+
     </>
   );
 }
