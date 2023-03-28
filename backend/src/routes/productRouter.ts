@@ -11,7 +11,8 @@ export const ProductRouter: FastifyPluginAsync = async (app) => {
   // Get all products
   app.get('/', async (request, reply) => {
     const products = await Product.find().lean()
-    return reply.view("products", products);
+    const data = { products }
+    return reply.view("products", data);
   })
   // Create a new Producto
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
