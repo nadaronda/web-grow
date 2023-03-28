@@ -1,5 +1,7 @@
 import { Carta } from "../components/Carta"
+import { getProducts } from "../lib/Api"
 function Productos() {
+
   return (<>
     <p>en esta page se deberan ver todos los productos disponibles</p>
     <p>si te logueas podras ver los precios</p>
