@@ -2,8 +2,9 @@ import Link from "next/link"
 import { useState } from "react";
 import { AiOutlinePlus } from 'react-icons/ai';
 import { GrFormSubtract } from 'react-icons/gr';
+//hacer interface
 
-export const Card: React.FC<{ price: number, nameProduct: any, description: string }> = ({ price, description, nameProduct }) => {
+export const Card: React.FC<{ price: number, nameProduct: string, description: string }> = ({ price, description, nameProduct }) => {
 
     return (<>
         <div className="w-[18rem] bg-neutral-50 rounded-lg" >
