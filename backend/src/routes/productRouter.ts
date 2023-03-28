@@ -1,5 +1,7 @@
 import { FastifyPluginAsync, FastifyRequest, FastifyReply } from 'fastify'
+import { request } from 'http';
 import { Product } from '../models/product.model'
+
 
 type Myrequest = FastifyRequest<{
   Body: { /*category: string, */nameProduct: string, description: string, price: number, active: boolean };
@@ -7,9 +9,9 @@ type Myrequest = FastifyRequest<{
 }>
 export const ProductRouter: FastifyPluginAsync = async (app) => {
   // Get all products
-  app.get('/', async () => {
+  app.get('/', async (request, reply) => {
     const products = await Product.find().lean()
-    return products
+    return reply.view("products", products);
   })
   // Create a new Producto
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {

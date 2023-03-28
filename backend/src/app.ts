@@ -6,8 +6,40 @@ import fastifyBlipp from 'fastify-blipp';
 import { index_plugin } from './routes/index.plugin';
 import cors from '@fastify/cors';
 import { ProductRouter } from "./routes/productRouter";
-
+import fastifyView from '@fastify/view';
+import path from 'path';
+import fs from 'fs';
+import fastifyStatic from '@fastify/static';
+import handlebars from 'handlebars';
 export const main_app: FastifyPluginAsync = async (app) => {
+    // Register @fastify/static
+    const STATIC_DIR = path.join(__dirname, '../public');
+    app.register(fastifyStatic, {
+        root: STATIC_DIR,
+    });
+
+    // Register @fastify/view
+    const VIEW_DIR = path.join(__dirname, '../view');
+    app.register(fastifyView, {
+        engine: {
+            handlebars,
+        },
+        root: VIEW_DIR,
+        layout: 'layouts/main',
+    });
+
+    // Register Handlebars Partials
+    const PARTIAL_DIR = path.join(__dirname, '../view/partials');
+    const filenames = fs.readdirSync(PARTIAL_DIR);
+    filenames.forEach((filename) => {
+        let matches = /^([^.]+).hbs$/.exec(filename);
+        if (!matches) {
+            return;
+        }
+        let name = matches[1];
+        let template = fs.readFileSync(PARTIAL_DIR + '/' + filename, 'utf8');
+        handlebars.registerPartial(name, template);
+    });
     // Connect to MongoDB
     app.register(conectDB);
 
