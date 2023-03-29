@@ -14,22 +14,18 @@ function productos() {
 
     console.log(data);
     return (<>
-        <title>Baja de productos:</title>
-        <p>En esta página se observan los  </p>
-        <p>IDEAS:</p>
-        <p>se añade la carta del producto con todos sus parametros, pero con 2 botones</p>
-        <button>Borrar</button>
-        <button>Añadir a altas</button>
+        <title>Productos dado de alta:</title>
 
-        {
+        <div className="w-full h-full flex flex-wrap gap-1 justify-center m-1">
+            {
+                data.map((elemento) => (
 
-            data.map((elemento) => (
+                    <Card key={elemento._id} nameProduct={elemento.nameProduct} description={elemento.description} price={elemento.price} />
 
-                <Card key={elemento._id} nameProduct={elemento.nameProduct} description={elemento.description} price={elemento.price} />
+                ))
 
-
-            ))
-        }
+            }
+        </div>
     </>);
 }
 
