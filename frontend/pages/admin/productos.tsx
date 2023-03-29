@@ -1,31 +1,26 @@
-import { useEffect, useState } from "react";
 import { Card } from "../../components/form/Card";
-import { getProducts, api } from "../../lib/Api";
 
-
+import { useProductList } from "../../hooks/useProductList";
 function productos() {
-    const [data, setData] = useState([]);
-    useEffect(() => {
 
-        api.get("/products").then((response) => setData(response.data));
-
-    }, []);
+    const { data } = useProductList();
 
 
-    console.log(data);
     return (<>
         <title>Productos dado de alta:</title>
+        <div className="min-h-[810px] flex justify-center items-center ">
+            <div className="w-full flex flex-wrap gap-1 items-center justify-center my-10">
+                {
+                    data && data.map((elemento) => (
 
-        <div className="w-full h-full flex flex-wrap gap-1 justify-center m-1">
-            {
-                data.map((elemento) => (
+                        <Card key={elemento._id} nameProduct={elemento.nameProduct} description={elemento.description} price={elemento.price} _id={elemento._id} />
 
-                    <Card key={elemento._id} nameProduct={elemento.nameProduct} description={elemento.description} price={elemento.price} />
+                    ))
 
-                ))
-
-            }
+                }
+            </div>
         </div>
+
     </>);
 }
 

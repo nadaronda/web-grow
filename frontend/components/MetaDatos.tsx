@@ -10,5 +10,5 @@ export const MetaDatos: React.FC = () => {
             <link href="/dist/output.css" rel="stylesheet"></link>
         </Head>
 
-    </>)
-}
+    </>);
+};

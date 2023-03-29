@@ -5,7 +5,7 @@ import { FaReact } from 'react-icons/fa';
 import { TbBrandNextjs } from 'react-icons/tb';
 export const Footer: React.FC = () => {
     return (<>
-        <footer className='flex flex-col justify-center  bg-lime-200 bg-opacity-50 fixed bottom-0 w-full'>
+        <footer className='flex flex-col justify-center  bg-lime-200 bg-opacity-50 fixed bottom-0  w-full'>
             <div className="flex justify-center gap-5">
                 <Link href="https://www.instagram.com/monasteriogrowshop/" title='pincha para acceder' className=" text-2xl" target="_blank">
                     <AiFillInstagram />
@@ -22,5 +22,5 @@ export const Footer: React.FC = () => {
                 <TbBrandNextjs title='Next JS' className='text-2xl' />
             </div>
         </footer>
-    </>)
-}
+    </>);
+};
