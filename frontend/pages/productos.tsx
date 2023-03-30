@@ -1,14 +1,29 @@
-import { Carta } from "../components/Carta"
-import { getProducts } from "../lib/Api"
-function Productos() {
+import { Card } from "../components/form/Card";
+
+import { useProductList } from "../hooks/useProductList";
+
+
+function productos() {
+
+  const { data } = useProductList();
+
 
   return (<>
-    <p>en esta page se deberan ver todos los productos disponibles</p>
-    <p>si te logueas podras ver los precios</p>
-    <p>el admin dispondra de botno baja o borrar </p>
-    <Carta descripcion="semillas que estan feminizadas para su uso" alt="soble de semillas" titulo="Semillas" src="/semillas.jpg"></Carta>
-    <Carta descripcion="Vapeador pequeño, para guardar en cualquier lugar" alt="vapeador" titulo="Vapeador" src="/vapeador.jpg"></Carta>
-  </>)
+    <title>Productos dado de alta:</title>
+    <div className="min-h-[810px] flex justify-center items-center ">
+      <div className="w-full flex flex-wrap gap-1 items-center justify-center my-10">
+        {
+          data && data.map((elemento) => (
+
+            <Card key={elemento._id} nameProduct={elemento.nameProduct} description={elemento.description} price={elemento.price} _id={elemento._id} />
+
+          ))
+
+        }
+      </div>
+    </div>
+
+  </>);
 }
 
-export default Productos
+export default productos;

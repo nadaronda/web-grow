@@ -9,7 +9,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: { colors: { "rosa": "#FEC3FB", "azul": "#82FCFD" } },
+    extend: {
+      colors: { "rosa": "#FEC3FB", "azul": "#82FCFD" },
+      backgroundImage: {
+        'tienda': "url('/tienda.jpg')",
+
+      }
+    },
+
   },
   plugins: [],
-}
+};
