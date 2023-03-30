@@ -34,10 +34,13 @@ export const Section: React.FC<{ children: any; variant: any; }> = ({
 
     return (
         //TODO: Meter emotion y mezclar estilos
-        <div className="">
-            <section style={estilo}>
-                <div className="bg-gradient-to-r from-azul to-rosa w-[50%]">{children}</div>
-            </section>
+        <div className="flex flex-row w-100% h-100%">
+
+
+            <div className="bg-gradient-to-r from-azul to-rosa w-[60%]">{children}</div>
+
+            <img src="/fondo_flor.jpg" alt="" className="w-[50%] " />
+
 
         </div>
     );

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Conocenos(): JSX.Element {
   return (<>
-    <div className="min-h-[800px] flex justify-end pr-20 items-center bg-[url('/tienda.jpg')] bg-no-repeat bg-cover bg-left">
+    <div className="min-h-[800px] flex justify-end pr-20 items-center bg-tienda bg-repeat bg-contain">
       <div className="flex flex-col px-[2%] py-[2%] border-solid border-4 h-[110] w-[30rem] bg-slate-100 border-slate-700">
 
         <div className="flex gap-3">
