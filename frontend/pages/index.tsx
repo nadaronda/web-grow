@@ -1,19 +1,19 @@
 import { CartaFondo } from "../components/CartaFondo";
-import { Section } from "../components/Section";
+import { SectionDrc } from "../components/SectionDrc";
 import { SectionIzq } from "../components/SectionIzq";
 
 
 function HomePage() {
   return (<>
 
-    <Section variant="fondo1" >
+    <SectionDrc >
       <CartaFondo titulo="Grow Shop El Monasterio"
         text1="El Monasterio es una pequeña tienda situada en la localidad de Torrejon de Ardoz, Madrid."
         texto2="Nos dedicamos a la venta de productos que contienen OCT" href="/productos"
         nameEnlace="Accede a nuestros productos"></CartaFondo>
-    </Section>
+    </SectionDrc>
 
-    <SectionIzq variant="fondo3" >
+    <SectionIzq  >
       <CartaFondo titulo="Grow Shop El Monasterio"
         text1="El Monasterio es una pequeña tienda situada en la localidad de Torrejon de Ardoz, Madrid."
         texto2="Nos dedicamos a la venta de productos que contienen OCT" href="/conocenos"
