@@ -9,7 +9,7 @@ export const NavbarCliente: React.FC<{ children: any; }> = ({ children }) => {
                     </a>
                 </div>
                 <div className='flex flex-row gap-5 place-items-center '>
-                    <LinkNavbar href='/#productos' path='/productos' text='Productos' />
+                    <LinkNavbar href='/productos' path='/productos' text='Productos' />
                     <LinkNavbar href='/semillas' path='/semillas' text='Semillas' />
                     <LinkNavbar href='/conocenos' path='/conocenos' text='Conócenos' />
                 </div>

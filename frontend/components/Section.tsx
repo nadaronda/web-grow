@@ -4,33 +4,24 @@ export const fondo_1 = {
     backgroundImage: `url("/fondo_flor.jpg")`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "100vh",
+    backgroundRepeat: "no-repeat",
+    height: "100%",
+    with: "100%",
+
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "",
+
 };
 export const fondo_2 = {
     backgroundImage: `url("/raw.png")`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
+
 };
 export const fondo_3 = {
-    backgroundImage: `url("")`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
+    backgroundImage: `url("/tienda.jpg")`,
 };
 
-const centrar = {
-    display: "flex",
-    justifyContent: "center",
-};
 
-export const Section: React.FC<{ children: any; variant: any }> = ({
+export const Section: React.FC<{ children: any; variant: any; }> = ({
     children,
     variant,
 }) => {
@@ -43,9 +34,12 @@ export const Section: React.FC<{ children: any; variant: any }> = ({
 
     return (
         //TODO: Meter emotion y mezclar estilos
-        <section style={estilo}>
-            <div>{children}</div>
-        </section>
+        <div className="">
+            <section style={estilo}>
+                <div className="bg-gradient-to-r from-azul to-rosa w-[50%]">{children}</div>
+            </section>
+
+        </div>
     );
 };
 

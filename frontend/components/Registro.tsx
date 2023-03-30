@@ -1,10 +1,10 @@
-import React from 'react'
-import { useUser } from "@auth0/nextjs-auth0/client"
-
-
+import React from 'react';
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { SlLogin } from 'react-icons/sl';
+import { IoLogOutOutline } from 'react-icons/io5';
 const Registro: React.FC = () => {
-    const { user } = useUser()
-    console.log(user)
+    const { user } = useUser();
+    console.log(user);
     return (
         <>
             <div className="container">
@@ -15,7 +15,8 @@ const Registro: React.FC = () => {
                                 <a className='m-[5px]'
                                     href="/api/auth/login"
                                 >
-                                    Iniciar sesión
+                                    <SlLogin />
+                                    Login
                                 </a>
                             </>
                         )}
@@ -25,7 +26,8 @@ const Registro: React.FC = () => {
                                 <a className='m-[5px]'
                                     href="/api/auth/logout"
                                 >
-                                    {' Cerrar sesión ' + user.nickname}
+                                    <IoLogOutOutline />
+                                    Logout
                                 </a>
                             </>
                         )}
@@ -33,7 +35,7 @@ const Registro: React.FC = () => {
                 </main>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Registro
+export default Registro;

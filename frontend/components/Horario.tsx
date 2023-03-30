@@ -5,7 +5,7 @@ export const Horario: React.FC = () => {
         <table>
             <thead className="bg-rosa ">
                 <tr>
-                    <th>HORARIO</th>
+                    <th></th>
                     <th>AM</th>
                     <th>PM</th>
                 </tr>
@@ -49,5 +49,5 @@ export const Horario: React.FC = () => {
             </tbody>
 
         </table>
-    </>)
-}
+    </>);
+};
