@@ -1,4 +1,4 @@
-import { Horario } from "../components/Horario";
+import { Horario } from "../components/conocenos/Horario";
 import { GiDirectionSigns } from 'react-icons/gi';
 import { BiMap } from 'react-icons/bi';
 import { BsClock } from 'react-icons/bs';
@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Conocenos(): JSX.Element {
   return (<>
-    <div className="min-h-[800px] flex justify-end pr-20 items-center bg-tienda bg-repeat bg-contain">
+    <div className="min-h-[91vh] flex justify-end pr-20 items-center bg-tienda bg-repeat bg-contain">
       <div className="flex flex-col px-[2%] py-[2%] border-solid border-4 h-[110] w-[30rem] bg-slate-100 border-slate-700">
 
         <div className="flex gap-3">
