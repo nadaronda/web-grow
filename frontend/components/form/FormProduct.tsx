@@ -1,23 +1,23 @@
-import { useForm } from 'react-hook-form'
-import { addProduct } from "../../lib/Api"
+import { useForm } from 'react-hook-form';
+import { addProduct } from "../../lib/Api";
 export const FormProduct: React.FC = () => {
     const {
         register,
         handleSubmit,
         reset,
         formState: { errors }
-    } = useForm()
+    } = useForm();
     const onSubmit = handleSubmit(async (data) => {
 
-        console.log(data)
-        const Product = await addProduct(data)
+        console.log(data);
+        const Product = await addProduct(data);
 
-        console.log('su producto se ha creado adecuadamente', Product)
+        console.log('su producto se ha creado adecuadamente', Product);
         /* {...register}
          Product.active = true*/
-        reset()
-    })
-    console.log(errors)
+        reset();
+    });
+    console.log(errors);
     return (<>
         <form className=" w-60 d-flex" onSubmit={handleSubmit(onSubmit)} >
 
@@ -40,5 +40,5 @@ export const FormProduct: React.FC = () => {
             <button onClick={onSubmit} type="submit" className="border-slate-200 p-2 bg-green-400  hover:border-green-400 hover:bg-slate-200 duration-500  border-2 rounded-lg ">Añadir</button>
 
         </form>
-    </>)
-}
+    </>);
+};

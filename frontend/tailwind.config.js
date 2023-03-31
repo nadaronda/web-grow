@@ -13,6 +13,7 @@ module.exports = {
       colors: { "rosa": "#FEC3FB", "azul": "#82FCFD" },
       backgroundImage: {
         'tienda': "url('/tienda.jpg')",
+        'colores': "url('/multi.png')",
 
       }
     },
