@@ -7,7 +7,7 @@ function productos() {
     return (
         <>
             <title>Productos dado de alta:</title>
-            <div className='min-h-[810px] flex justify-center items-center '>
+            <div className=' flex justify-center items-center bg-colores bg-cover py-10 bg-no-repeat min-h-[91vh]'>
                 <div className='w-full flex flex-wrap gap-1 items-center justify-center my-10'>
                     {data &&
                         data.map((elemento) => (

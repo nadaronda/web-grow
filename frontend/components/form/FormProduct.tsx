@@ -21,55 +21,69 @@ export const FormProduct: React.FC = () => {
     });
     console.log(errors);
     return (
-        <>
-            <form className='w-60 d-flex' onSubmit={handleSubmit(onSubmit)}>
-                <legend className='d-flex'>Añadir producto:</legend>
+        <><div className='flex  pl-10 pt-10 font-bold text-2xl'>Añadir producto:</div>
 
-                <div className=''>
-                    <div className=''>
-                        <label htmlFor='nameProduct' className='form-label bg-amber-200 rounded'>
-                            Nombre del producto:{' '}
-                        </label>
-                        <input
-                            type='text'
-                            id='nameProduct'
-                            placeholder='nombre del producto ...'
-                            {...register('nameProduct', { required: true })}
-                            className='form-control border-2 rounded border-amber-200'
-                        />
-                    </div>
-                    <div className=''>
-                        <label htmlFor='description' className='form-label bg-amber-200 rounded'>
-                            Descripción:{' '}
-                        </label>
-                        <input
-                            type='text'
-                            id='description'
-                            placeholder='descripción del producto...'
-                            {...register('description', { required: true })}
-                            className='form-control border-2 rounded border-amber-200'
-                        />
+            <div className='min-h-[790px] flex justify-center items-center '>
+
+                <form method='post' className='w-[16rem] h-80 d-flex bg-slate-400 rounded  py-5 px-5' onSubmit={handleSubmit(onSubmit)}>
+
+
+                    <div className='flex flex-col   gap-5'>
+
+                        <div className=''>
+                            <label htmlFor='nameProduct' className='form-label bg-azul px-3 py-1 rounded'>
+                                Nombre del producto:{' '}
+                            </label>
+                            <input
+                                name="nameProduct"
+                                type='text'
+                                id='nameProduct'
+                                placeholder='nombre del producto ...'
+                                {...register('nameProduct', { required: true })}
+                                className='form-control border-2 rounded text-center '
+                            />
+                        </div>
+                        <div className=''>
+                            <label htmlFor='description' className='form-label bg-azul px-3 py-1 rounded '>
+                                Descripción:{' '}
+                            </label>
+                            <input
+                                name="description"
+                                type='text'
+                                id='description'
+                                placeholder='descripción del producto...'
+                                {...register('description', { required: true })}
+                                className='form-control border-2 rounded  text-center '
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='price' className='form-label bg-azul px-3 py-1 rounded text-center'>
+                                Precio:{' '}
+                            </label>
+                            <input
+                                name="price"
+                                type='text'
+                                id='price'
+                                placeholder='precio...'
+                                {...register('price', { required: true })}
+                                className='form-control border-2 rounded text-center'
+                            />
+                        </div>
+                        <div className=' flex justify-end '>
+                            <button
+                                onClick={onSubmit}
+                                type='submit'
+                                className=' text-xl font-medium border-slate-200 px-5 py-3 bg-azul  hover:border-azul hover:bg-rosa hover:text-[22px] duration-500  border-2 rounded-lg '
+                            >
+                                Añadir
+                            </button>
+                        </div>
+
                     </div>
 
-                    <label htmlFor='price' className='form-label bg-amber-200 rounded'>
-                        Precio:{' '}
-                    </label>
-                    <input
-                        type='text'
-                        id='price'
-                        placeholder='precio...'
-                        {...register('price', { required: true })}
-                        className='form-control border-2 rounded border-amber-200'
-                    />
-                </div>
-                <button
-                    onClick={onSubmit}
-                    type='submit'
-                    className='border-slate-200 p-2 bg-green-400  hover:border-green-400 hover:bg-slate-200 duration-500  border-2 rounded-lg '
-                >
-                    Añadir
-                </button>
-            </form>
+                </form>
+            </div>
+
         </>
     );
 };

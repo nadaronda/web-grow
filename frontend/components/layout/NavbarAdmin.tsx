@@ -4,18 +4,23 @@ import { Registro } from './Registro';
 export const NavbarAdmin = () => {
     return (
         <>
-            <nav className=' w-full bg-white flex justify-between '>
-                <div className='px-5 py-0 m-0 rounded-full ' title='Inicio'>
+            <nav className=' w-full bg-white flex justify-between items-center p-5'>
+                <div className=' rounded-full' title='Inicio'>
                     <a href='/'>
-                        <img className='rounded-full' src='/monasterio.jpg' alt='Bootstrap' width='100' />
+                        <img
+                            className='rounded-full hover:drop-shadow-line hover:transition-all transition-all'
+                            src='/monasterio.jpg'
+                            alt='logo'
+                            width='70'
+                        />
                     </a>
                 </div>
-                <div className='flex flex-row gap-5 place-items-center '>
+                <div className='flex justify-between w-[400px] mx-8'>
                     <LinkNavbar href='/admin/productos' text='Productos' />
                     <LinkNavbar href='/admin/alta' text='ALTA' />
                     <LinkNavbar href='/admin/baja' text='BAJA' />
                 </div>
-                <div className='px-5 flex  place-items-center'>
+                <div className=''>
                     <Registro />
                 </div>
             </nav>

@@ -23,3 +23,18 @@ export const deleteProduct = async (id) => {
   const res = await api.delete(`/products/${id}`);
   return res.data;
 };
+
+export const putProduct = async (id) => {
+  await api.put(`/products/${id}`, async (req, res) => {
+    let id = req.params;
+    let { nameProduct, description, price, active } = req.body;
+    await id.put(
+      { nameProduct, description, price, active }, {
+      where: { id }
+    },
+      res.status(200).send("Producto Actualizado")
+    );
+  });
+}
+
+

@@ -1,5 +1,5 @@
 import { interfaceProduct } from '../../types/interfaceProduct';
-import { deleteProduct } from '../../lib/Api';
+import { deleteProduct, putProduct, addProduct } from '../../lib/Api';
 import { useProductList } from '../../hooks/useProductList';
 
 export const Card: React.FC<interfaceProduct> = ({ price, description, nameProduct, _id, active }) => {
@@ -15,7 +15,14 @@ export const Card: React.FC<interfaceProduct> = ({ price, description, nameProdu
                     <p>Precio: {price} €</p>
                 </div>
                 <div className='flex  gap-[2px] justify-end'>
-                    <button className='bg-slate-500  rounded-l-lg text-white px-3 hover:bg-slate-400 hover:text-black'>BAJA</button>
+                    <button
+                        onClick={async (_id) => {
+
+                            await putProduct(console.log("jdsjak"));
+                            ;
+                            mutate();
+                        }}
+                        className='bg-slate-500  rounded-l-lg text-white px-3 hover:bg-slate-400 hover:text-black'>BAJA</button>
                     <button
                         onClick={async () => {
                             await deleteProduct(_id);
@@ -26,7 +33,7 @@ export const Card: React.FC<interfaceProduct> = ({ price, description, nameProdu
                         BORRAR
                     </button>
                 </div>
-            </div>
+            </div >
         </>
     );
 };

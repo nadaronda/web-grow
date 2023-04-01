@@ -14,6 +14,7 @@ module.exports = {
             backgroundImage: {
                 tienda: "url('/tienda.jpg')",
                 colores: "url('/multi.png')",
+                pageConstruction: "url('/page.png')",
             },
             dropShadow: {
                 line: '0 0 20px rgba(254, 195, 251, 1)',
