@@ -24,7 +24,7 @@ Web Grow
 
 ## 2. Imágenes y vídeos:
 
-![El MoNaStErIo](./img/monasterio.jpg)
+![El MoNaStErIo](/img/monasterio.jpg)
 
 ## 3. Motivación del proyecto:
 
@@ -35,9 +35,78 @@ Web Grow se trata de una pagina web, motivación de unos de mis hermanos que tie
 [Pincha aquí para poder acceder](nadaronda.github.io/web_Grow)
 
 ## 5. Tabla de contenidos o índice:
+```
+frontend                               backend                                    
+├───📁 components/                     ├───📁 src/ 
+│   ├───📁 conocenos/│                 │    ├─📁 lib/
+│   │      └───📄 Horario.tsx          │    │  └───📄 db.ts
+│   ├───📁 form/                       │    ├───📁 models/
+│   │    ├───📄 BotonMas.tsx           │    │   └───📄 product.model.ts
+│   │    ├───📄 BotonMenos.tsx         │    ├───📁 routes/
+│   │    ├───📄 FormActualizar.tsx     │    │   ├───📄 index.plugin.ts
+│   │    └───📄 FormProduct.tsx        │    │   └───📄 productRouter.ts
+│   ├───📁 index/                      │    ├───📁 types/
+│   │    ├───📄 CartaFondo.tsx         │    │   └───📄 interfaceProduct.ts
+│   │    └───📄 Section.tsx            │    ├───📄 app.ts
+│   ├───📁 layout/                     │    ├───📄 config.ts
+│   │    ├───📄 Footer.tsx             │    ├───📄 seed.ts
+│   │    ├───📄 Layout.tsx             │    └───📄 server.ts
+│   │    ├───📄 LinkNavbar.tsx         ├───📄 .env
+│   │    ├───📄 NavbarAdmin.tsx        ├───📄 .gitignore
+│   │    ├───📄 NavbarCliente.tsx      ├───📄 package.json
+│   │    └───📄 Registro.tsx           └───📄 yarn.lock
+│   └───📁 products/
+│        ├───📄 Card.tsx
+│        └───📄 CardCliente.tsx
+├──📁 hooks/
+│        └───📄 useProductList.ts
+├──📁 lib/
+│      ├───📄 Api.ts
+│      ├───📄 backendFetcher.ts
+│      └───📄 fistLetterToUpper.ts
+├──📁 pages/
+│  ├───📁 admin/
+│  ├───📄 alta.tsx
+│  │   ├───📄 baja.tsx
+│  │   └───📄 productos.tsx
+│  ├───📁 api/
+│  │   └───📁 auth/
+│  ├───📄 conocenos.tsx
+│  ├───📄 index.tsx
+│  ├───📄 productos.tsx
+│  ├───📄 semillas.tsx
+│  └───📄 _app.tsx
+├──📁 public/
+│  ├───📁 css/
+│  │   └───📄 globals.css
+│  ├───📄 cafeCanabis.png
+│  ├───📄 cannabis.png
+│  ├───📄 cbdAromas.png
+│  ├───📄 fondo_flor.jpg
+│  ├───📄 liquidoCBD.png
+│  ├───📄 monasterio.jpg
+│  ├───📄 monasterioFondoNegro.jpg
+│  ├───📄 multi.png
+│  ├───📄 page.png
+│  ├───📄 productosCultivo.jpg
+│  ├───📄 raw.png
+│  ├───📄 semillas.jpg
+│  ├───📄 tienda.jpg
+│  ├───📄 vapeador.jpg
+│  └───📄 vapeador1.jpg
+├──📁 types/
+│   └───📄 interfaceProduct.ts
+├──📄 .babelrc
+├──📄 .env.local
+├──📄 .gitignore
+├──📄 next-env.d.ts
+├──📄 package.json
+├──📄 postcss.config.js
+├──📄 tailwind.config.js
+├──📄 tsconfig.json
+└──📄 yarn.lock
 
-en proceso ...
-
+```
 ## 6. Manual de instalación y deployment:
 
 ```
@@ -72,20 +141,20 @@ Añadir estructura basica de un componente en react
 
 -   El proyecto estará desarrollado en React y Next Js
 -   Trabajado en el entorno de Node.js
+-   El proyecto se ejecuta en dos servidores uno con Fastify y otro con nextJs
 -   Lenguaje de programacion typescript
 -   Se utiliza npm como gestor de paquete
-
 -   [Visual Studio Code](https://code.visualstudio.com/Download)
 
 ## 9. Listado de paquetes y dependencias:
 
 -   Node package manager: [npm](https://www.npmjs.com/)
 -   To run the HTML: [Vite](https://vitejs.dev/)
--   [Tailwind](https://tailwindcss.com/) es un framework para trabajar estilos CSS.
+-   [Tailwind](https://tailwindcss.com/) es un framework para trabajar estilos CSS. [Instalación](https://tailwindcss.com/docs/installation)
 -   Lenguajes de programación: [typescript](https://www.npmjs.com/package/typescript)
 -   Otros paquetes de Node: Lodash
-
+-   [React icons](https://react-icons.github.io/react-icons/search)
 
 ## 10. Agradecimientos:
 
-Agradecimientos principalemente a [Core code school](https://github.com/core-school) por la oportunidad que me estan dando. A mi profesor [Juan Pablo](https://github.com/Systrent), mi compañero [Daniel Cortina ](https://github.com/DanielCG55). Y a mi familia por su gran apoyo.
+Agradecimientos principalemente a [Core code school](https://github.com/core-school) por la oportunidad que me estan dando. A mi profesor [Juan Pablo](https://github.com/Systrent), mi compañero [Daniel Cortina ](https://github.com/DanielCG55). Y a mi familia por toda la ayuda recibida y su gran apoyo, sin ellos no lo hubiera logrado.
