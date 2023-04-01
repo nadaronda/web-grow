@@ -4,7 +4,7 @@ import { Product } from '../models/product.model';
 
 
 type Myrequest = FastifyRequest<{
-  Body: { /*category: string, */nameProduct: string, description: string, price: number, active: boolean; };
+  Body: { /*category: string, */nameProduct: string, description: string, price: number, active: boolean, img?: object; };
   Params: { id: string; };
 }>;
 export const ProductRouter: FastifyPluginAsync = async (app) => {
@@ -15,8 +15,8 @@ export const ProductRouter: FastifyPluginAsync = async (app) => {
   });
   // Create a new Producto
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
-    const { /*category,*/ nameProduct, description, price, active } = request.body;
-    const newProduct = new Product({/* category,*/ nameProduct, description, price, active });
+    const { /*category,*/ nameProduct, description, price, active, img } = request.body;
+    const newProduct = new Product({/* category,*/ nameProduct, description, price, active, img });
     await newProduct.save();
     return newProduct;
   });
@@ -25,5 +25,18 @@ export const ProductRouter: FastifyPluginAsync = async (app) => {
     const { id } = request.params;
     await Product.findByIdAndDelete(id);
     return { status: 'delete' };
+  });
+  //actulaizar el dato
+  app.put('/:id', async (request: Myrequest, reply: FastifyReply) => {
+
+    const { id } = request.params;
+    const { nameProduct, description, price, active } = request.body;
+    await Product.findOneAndReplace({ nameProduct, description, price, active }, {
+      where: {
+        id,
+      }
+    });
+    reply.status(200).send("su producto esta actualizado");
+
   });
 };
