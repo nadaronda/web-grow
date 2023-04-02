@@ -10,10 +10,10 @@ export const FormProduct: React.FC = () => {
     } = useForm();
     const onSubmit = handleSubmit(async (data) => {
         console.log(data);
-        const { nameProduct, description, price } = data;
+        const { nameProduct, description, priceVentaClient, priceCompra } = data;
         const transformedData = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description) };
 
-        const product = await addProduct({ ...transformedData, price, active: true });
+        const product = await addProduct({ ...transformedData, priceVentaClient, priceCompra, active: true });
 
         console.log('Su producto se ha creado adecuadamente', product);
 
@@ -57,15 +57,28 @@ export const FormProduct: React.FC = () => {
                             />
                         </div>
                         <div>
-                            <label htmlFor='price' className='form-label bg-azul px-3 py-1 rounded text-center'>
-                                Precio:{' '}
+                            <label htmlFor='priceVentaClient' className='form-label bg-azul px-3 py-1 rounded text-center'>
+                                Precio de venta al cleinte:{' '}
                             </label>
                             <input
-                                name="price"
+                                name="priceVentaClient"
+                                type='number'
+                                id='priceVentaClient'
+                                placeholder='precio del cliente...'
+                                {...register('priceVentaClient', { required: true })}
+                                className='form-control border-2 rounded text-center'
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='priceCompra' className='form-label bg-azul px-3 py-1 rounded text-center'>
+                                Precio de Compra:{' '}
+                            </label>
+                            <input
+                                name="priceCompra"
                                 type='text'
-                                id='price'
-                                placeholder='precio...'
-                                {...register('price', { required: true })}
+                                id='priceCompra'
+                                placeholder='precio de Compra...'
+                                {...register('priceCompra', { required: true })}
                                 className='form-control border-2 rounded text-center'
                             />
                         </div>

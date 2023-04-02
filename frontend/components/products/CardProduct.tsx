@@ -1,8 +1,8 @@
 import { interfaceProduct } from '../../types/interfaceProduct';
 import { deleteProduct, putProduct, addProduct, getProductsId } from '../../lib/Api';
-import { useProductList } from '../../hooks/useProductList';
+import { useProductList, useIdProduct } from '../../hooks/useProductList';
 
-export const Card: React.FC<interfaceProduct> = ({ priceVentaClient, priceCompra, description, nameProduct, _id, active }) => {
+export const CardProduct: React.FC<interfaceProduct> = ({ priceVentaClient, priceCompra, description, nameProduct, _id, active }) => {
     const { mutate } = useProductList();
 
     return (
@@ -12,19 +12,19 @@ export const Card: React.FC<interfaceProduct> = ({ priceVentaClient, priceCompra
                     <h5 className='text-center text-2xl '>{nameProduct}</h5>
                     <br />
                     <p>Descripción: {description}</p>
-                    <p>Precio de venta: {priceVentaClient} €</p>
-                    <p>Precio de compra: {priceCompra} €</p>
-
+                    <p>Precio de Venta: {priceVentaClient} €</p>
+                    <p>Precio de Compra: {priceCompra} €</p>
                 </div>
                 <div className='flex  gap-[2px] justify-end'>
                     <button
                         onClick={async () => {
-                            console.log(await getProductsId(_id));
+                            return (getProductsId(_id));
+
                         }}
                         className='bg-slate-500 rounded  text-white px-3 hover:bg-slate-400 hover:text-black'
                     >
-                        Ficha
 
+                        <a href="/admin/fichaProduc">FICHA</a>
                     </button>
                     <button
                         onClick={async (_id) => {

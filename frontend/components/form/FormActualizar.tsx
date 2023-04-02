@@ -10,10 +10,10 @@ export const FormProduct: React.FC = () => {
     } = useForm();
     const onSubmit = handleSubmit(async (data) => {
         console.log(data);
-        const { nameProduct, description, price } = data;
+        const { nameProduct, description, priceVentaClient } = data;
         const transformedData = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description) };
 
-        const product = await addProduct({ ...transformedData, price, active: true });
+        const product = await addProduct({ ...transformedData, priceVentaClient, active: true });
 
         console.log('Su producto se ha creado adecuadamente', product);
 
@@ -51,14 +51,14 @@ export const FormProduct: React.FC = () => {
                         />
                     </div>
 
-                    <label htmlFor='price' className='form-label bg-amber-200 rounded'>
+                    <label htmlFor='priceVentaClient' className='form-label bg-amber-200 rounded'>
                         Precio:{' '}
                     </label>
                     <input
                         type='text'
-                        id='price'
-                        placeholder='precio...'
-                        {...register('price', { required: true })}
+                        id='priceVentaClient'
+                        placeholder='precio de venta...'
+                        {...register('priceVentaClient', { required: true })}
                         className='form-control border-2 rounded border-amber-200'
                     />
                 </div>

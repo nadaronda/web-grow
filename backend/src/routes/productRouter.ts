@@ -4,7 +4,7 @@ import { Product } from '../models/product.model';
 
 
 type Myrequest = FastifyRequest<{
-  Body: { /*category: string, */nameProduct: string, description: string, price: number, active: boolean, img?: object; };
+  Body: { /*category: string, */nameProduct: string, description: string, priceVentaClient: number, priceCompra: number, active: boolean, img?: object; };
   Params: { id: string; };
 }>;
 export const ProductRouter: FastifyPluginAsync = async (app) => {
@@ -13,10 +13,17 @@ export const ProductRouter: FastifyPluginAsync = async (app) => {
     const products = await Product.find().lean();
     return products;
   });
+  // Get a product 
+  app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
+    const { id } = request.params;
+    const products = await Product.findById(id);
+    return products;
+  });
+
   // Create a new Producto
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
-    const { /*category,*/ nameProduct, description, price, active, img } = request.body;
-    const newProduct = new Product({/* category,*/ nameProduct, description, price, active, img });
+    const { /*category,*/ nameProduct, description, priceVentaClient, priceCompra, active, img } = request.body;
+    const newProduct = new Product({/* category,*/ nameProduct, description, priceVentaClient, priceCompra, active, img });
     await newProduct.save();
     return newProduct;
   });
@@ -30,8 +37,8 @@ export const ProductRouter: FastifyPluginAsync = async (app) => {
   app.put('/:id', async (request: Myrequest, reply: FastifyReply) => {
 
     const { id } = request.params;
-    const { nameProduct, description, price, active } = request.body;
-    await Product.findOneAndReplace({ nameProduct, description, price, active }, {
+    const { nameProduct, description, priceVentaClient, priceCompra, active } = request.body;
+    await Product.findOneAndReplace({ nameProduct, description, priceVentaClient, priceCompra, active }, {
       where: {
         id,
       }

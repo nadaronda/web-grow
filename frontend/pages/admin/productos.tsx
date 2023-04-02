@@ -15,7 +15,8 @@ function productos() {
                                 key={elemento._id}
                                 nameProduct={elemento.nameProduct}
                                 description={elemento.description}
-                                price={elemento.price}
+                                priceVentaClient={elemento.priceVentaClient}
+                                priceCompra={elemento.priceCompra}
                                 _id={elemento._id}
                             />
                         ))}
