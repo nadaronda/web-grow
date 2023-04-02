@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { addProduct } from '../../lib/Api';
+import { addProduct } from '../../lib/api';
 import { firstLetterToUpper } from '../../lib/firstLetterToUpper';
 export const FormProduct: React.FC = () => {
     const {

@@ -7,7 +7,7 @@ export const getProducts = async () => {
   const res = await api.get("/products");
   return res.data;
 };
-export const getProductsId = async (id) => {
+export const getProductWithId = async (id) => {
   const res = await api.get(`/products/${id}`);
   return res.data;
 };
@@ -28,17 +28,21 @@ export const deleteProduct = async (id) => {
   return res.data;
 };
 
-export const putProduct = async (id) => {
-  await api.put(`/products/${id}`, async (req, res) => {
-    let id = req.params;
-    let { nameProduct, description, price, active } = req.body;
-    await id.put(
-      { nameProduct, description, price, active }, {
-      where: { id }
-    },
-      res.status(200).send("Producto Actualizado")
-    );
-  });
-}
+
+export const updateProduct = async (id, data) => {
+  const { nameProduct, description, price, active } = data;
+  try {
+    const response = await api.put(`/products/${id}`, {
+      nameProduct,
+      description,
+      price,
+      active,
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al actualizar el producto");
+  }
+};
 
 

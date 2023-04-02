@@ -4,8 +4,8 @@ const schema = new Schema({
   //category: String,
   nameProduct: { type: String, require: true },
   description: { type: String, require: true },
-  priceVentaClient: { type: Number, require: true },
-  priceCompra: { type: Number, require: true },
+  priceVentaClient: { type: String, require: true },
+  priceCompra: { type: String, require: true },
   active: { type: Boolean, require: true },
   img: { type: Object, require: false }
 

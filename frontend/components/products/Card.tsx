@@ -1,6 +1,7 @@
 import { interfaceProduct } from '../../types/interfaceProduct';
-import { deleteProduct, putProduct, addProduct, getProductsId } from '../../lib/Api';
+import { deleteProduct, updateProduct, getProductWithId } from '../../lib/api';
 import { useProductList } from '../../hooks/useProductList';
+import Link from 'next/link';
 
 export const Card: React.FC<interfaceProduct> = ({ priceVentaClient, priceCompra, description, nameProduct, _id, active }) => {
     const { mutate } = useProductList();
@@ -17,23 +18,10 @@ export const Card: React.FC<interfaceProduct> = ({ priceVentaClient, priceCompra
 
                 </div>
                 <div className='flex  gap-[2px] justify-end'>
-                    <button
-                        onClick={async () => {
-                            console.log(await getProductsId(_id));
-                        }}
-                        className='bg-slate-500 rounded  text-white px-3 hover:bg-slate-400 hover:text-black'
-                    >
-                        Ficha
 
-                    </button>
-                    <button
-                        onClick={async (_id) => {
+                    <Link href={`/admin/${_id}`}
 
-                            await putProduct(console.log("jdsjak"));
-                            ;
-                            mutate();
-                        }}
-                        className='bg-slate-500  rounded-l-lg text-white px-3 hover:bg-slate-400 hover:text-black'>BAJA</button>
+                        className='bg-slate-500  rounded-l-lg text-white px-3 hover:bg-slate-400 hover:text-black'>editar</Link>
                     <button
                         onClick={async () => {
                             await deleteProduct(_id);

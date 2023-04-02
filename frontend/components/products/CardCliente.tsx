@@ -1,5 +1,5 @@
 import { interfaceProduct } from '../../types/interfaceProduct';
-import { deleteProduct } from '../../lib/Api';
+import { deleteProduct } from '../../lib/api';
 import { useProductList } from '../../hooks/useProductList';
 import { firstLetterToUpper } from '../../lib/firstLetterToUpper';
 

@@ -1,11 +1,11 @@
 export interface interfaceProduct {
     //category?: String,
-    _id?: String,
-    nameProduct: String,
-    description: String,
-    priceVentaClient: number,
-    priceCompra?: number,
-    active?: Boolean,
+    _id?: string,
+    nameProduct: string,
+    description: string,
+    priceVentaClient: string,
+    priceCompra: string,
+    active?: boolean,
 
     // add seed categorys predefinidas
 }
