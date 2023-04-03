@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getProductWithId } from "../../lib/api";
+import { getProductWithId } from "../../lib/Api";
 import { FormProduct } from "../../components/form/FormProduct";
-
+import { interfaceProduct } from "../../types/interfaceProduct";
 export function getServerSideProps(ctx: any) {
     const { params } = ctx;
     const { _id } = params;
@@ -14,7 +14,7 @@ const editar: React.FC<{ _id: string; }> = ({ _id }) => {
 
     useEffect(() => {
         const fetchProduct = async () => {
-            const product = await getProductWithId(_id);
+            const product: interfaceProduct = await getProductWithId(_id);
             setProduct(product);
         };
         fetchProduct();

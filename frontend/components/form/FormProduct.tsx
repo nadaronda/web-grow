@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { addProduct, updateProduct } from '../../lib/api';
+import { addProduct, updateProduct } from '../../lib/Api';
 import { firstLetterToUpper } from '../../lib/firstLetterToUpper';
 import { interfaceProduct } from "../../types/interfaceProduct";
 import { useEffect } from 'react';
@@ -24,10 +24,10 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
         }
     }, [product, setValue]);
 
-    const onSubmit = handleSubmit(async (data) => {
+    const onSubmit = handleSubmit(async (data: interfaceProduct) => {
         console.log(data);
         const { nameProduct, description, priceVentaClient, priceCompra } = data;
-        const transformedData = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description), priceVentaClient, priceCompra, active: true };
+        const transformedData: interfaceProduct = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description), priceVentaClient, priceCompra, active: true };
 
         const product = await addProduct({ ...transformedData });
 
@@ -36,13 +36,13 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
     });
 
     const onUpdate = (id: string) =>
-        handleSubmit(async (data) => {
+        handleSubmit(async (data: interfaceProduct) => {
             const transformedData = {
                 nameProduct: firstLetterToUpper(data.nameProduct),
                 description: firstLetterToUpper(data.description),
             };
 
-            const product = await updateProduct(id, {
+            const product: interfaceProduct = await updateProduct(id, {
                 ...transformedData,
                 priceVentaClient: data.priceVentaClient,
                 priceCompra: data.priceCompra,
@@ -50,7 +50,7 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
             });
 
             console.log('Su producto se ha actualizado adecuadamente', product);
-
+            reset();
         });
 
     return (
