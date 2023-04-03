@@ -1,11 +1,11 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { interfaceProduct } from '../types/interfaceProduct';
 const schema = new Schema({
   //category: String,
   nameProduct: { type: String, require: true },
   description: { type: String, require: true },
-  priceVentaClient: { type: String, require: true },
-  priceCompra: { type: String, require: true },
+  priceVentaClient: { type: Number, require: true },
+  priceCompra: { type: Number, require: true },
   active: { type: Boolean, require: true },
   img: { type: Object, require: false }
 

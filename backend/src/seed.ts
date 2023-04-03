@@ -8,7 +8,6 @@ const produtsList = [
   { nameProduct: "Papeles", description: "Papel de liar con sabor de piña", priceVentaClient: 1.5, priceCompra: 0.20, active: true },
   { nameProduct: "Mecheros", description: "Mecheros de todos los tamaños, y de todos los materiales.Mecheros personalizados bajo pedido.", priceVentaClient: 1.5, priceCompra: 0.5, active: true },
   { nameProduct: "Bandejas", description: "Bandejas pequeñas.", priceVentaClient: 1.5, priceCompra: 0.20, active: true },
-
   { nameProduct: "CBD Líquido", description: "CBD líqido de todos los sabores, fresa, menta, melon , marihuana etc...", priceVentaClient: 7.5, priceCompra: 3, active: true },
 
 ];

@@ -18,9 +18,6 @@ function Conocenos(): JSX.Element {
           <Link href="https://www.google.es/maps/place/C.+M%C3%A1rmol,+5,+28850+Torrej%C3%B3n+de+Ardoz,+Madrid/@40.4497594,-3.4707808,17z/data=!3m1!4b1!4m6!3m5!1s0xd42370f9382b1f7:0xa040c1723ad61756!8m2!3d40.4497594!4d-3.4685868!16s%2Fg%2F11c5qlp2x_"><BiMap className="hover:text-slate-600" /></Link>
           Localización
         </div>
-
-
-
         <div className="flex gap-3">
           <BsFillTelephoneFill />
           +34 685 70 83 08
@@ -29,7 +26,6 @@ function Conocenos(): JSX.Element {
           <BsClock />
           HORARIO
         </div>
-
         <Horario />
       </div>
     </div>

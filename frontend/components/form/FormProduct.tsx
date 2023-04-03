@@ -27,9 +27,9 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
     const onSubmit = handleSubmit(async (data) => {
         console.log(data);
         const { nameProduct, description, priceVentaClient, priceCompra } = data;
-        const transformedData = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description) };
+        const transformedData = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description), priceVentaClient, priceCompra, active: true };
 
-        const product = await addProduct({ ...transformedData, priceVentaClient, priceCompra, active: true });
+        const product = await addProduct({ ...transformedData });
 
         console.log('Su producto se ha creado adecuadamente', product);
         reset();
@@ -50,7 +50,7 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
             });
 
             console.log('Su producto se ha actualizado adecuadamente', product);
-            reset();
+
         });
 
     return (
@@ -66,6 +66,7 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                                 Nombre del producto:
                             </label>
                             <input
+
                                 name="nameProduct"
                                 type='text'
                                 id='nameProduct'
@@ -79,6 +80,7 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                                 Descripción:
                             </label>
                             <input
+
                                 name="description"
                                 type='text'
                                 id='description'
@@ -92,8 +94,9 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                                 Precio de venta:
                             </label>
                             <input
+
                                 name="priceVentaClient"
-                                type='text'
+                                type='number'
                                 id='priceVentaClient'
                                 placeholder='precio del cliente...'
                                 {...register('priceVentaClient', { required: true })}
@@ -105,16 +108,21 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                                 Precio de Compra:
                             </label>
                             <input
+
                                 name="priceCompra"
-                                type='text'
+                                type='number'
                                 id='priceCompra'
                                 placeholder='precio de Compra...'
                                 {...register('priceCompra', { required: true })}
                                 className='form-control border-2 rounded text-center'
                             />
                         </div>
-                        {!product && (<ButtonAdd />)}
-                        {product && (<ButtonUpdate />)}
+                        {!product && (
+                            <ButtonAdd />
+                        )}
+                        {product &&
+                            (<ButtonUpdate />)
+                        }
                     </div>
                 </form>
             </div>

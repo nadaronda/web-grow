@@ -1,26 +1,19 @@
+import React from 'react';
 import { LinkNavbar } from './LinkNavbar';
 import { Registro } from './Registro';
+import { ImgHome } from './ImgHome';
 
 export const NavbarAdmin = () => {
     return (
         <>
             <nav className=' w-full bg-white flex justify-between items-center p-5'>
-                <div className=' rounded-full' title='Inicio'>
-                    <a href='/'>
-                        <img
-                            className='rounded-full hover:drop-shadow-line hover:transition-all transition-all'
-                            src='/monasterio.jpg'
-                            alt='logo'
-                            width='70'
-                        />
-                    </a>
-                </div>
+                <ImgHome />
                 <div className='flex justify-between w-[400px] mx-8'>
                     <LinkNavbar href='/admin/productos' text='Productos' />
-                    <LinkNavbar href='/admin/alta' text='ALTA' />
-                    <LinkNavbar href='/admin/baja' text='BAJA' />
+                    <LinkNavbar href='/admin/alta' text='Alta' />
+                    <LinkNavbar href='/admin/baja' text='Baja' />
                 </div>
-                <div className=''>
+                <div>
                     <Registro />
                 </div>
             </nav>
