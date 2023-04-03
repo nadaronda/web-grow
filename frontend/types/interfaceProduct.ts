@@ -3,8 +3,8 @@ export interface interfaceProduct {
     _id?: string,
     nameProduct: string,
     description: string,
-    priceVentaClient: string,
-    priceCompra: string,
+    priceVentaClient: number,
+    priceCompra: number,
     active?: boolean,
 
     // add seed categorys predefinidas

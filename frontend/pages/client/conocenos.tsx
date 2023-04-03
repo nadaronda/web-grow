@@ -1,4 +1,4 @@
-import { Horario } from "../components/conocenos/Horario";
+import { Horario } from "../../components/conocenos/Horario";
 import { GiDirectionSigns } from 'react-icons/gi';
 import { BiMap } from 'react-icons/bi';
 import { BsClock } from 'react-icons/bs';

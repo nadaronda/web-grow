@@ -16,9 +16,9 @@ export const NavbarCliente = () => {
                     </a>
                 </div>
                 <div className='flex justify-between w-[400px] mx-8'>
-                    <LinkNavbar href='/productos' text='Productos' />
-                    <LinkNavbar href='/semillas' text='Semillas' />
-                    <LinkNavbar href='/conocenos' text='Conócenos' />
+                    <LinkNavbar href='/client/productos' text='Productos' />
+                    <LinkNavbar href='/client/semillas' text='Semillas' />
+                    <LinkNavbar href='/client/conocenos' text='Conócenos' />
                 </div>
                 <div className=''>
                     <Registro />

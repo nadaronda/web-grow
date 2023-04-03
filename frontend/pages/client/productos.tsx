@@ -1,5 +1,5 @@
-import { CardCliente } from '../components/products/CardCliente';
-import { useProductList } from '../hooks/useProductList';
+import { CardCliente } from '../../components/products/CardCliente';
+import { useProductList } from '../../hooks/useProductList';
 
 function productosCliente() {
     const { data } = useProductList();

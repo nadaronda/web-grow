@@ -5,7 +5,7 @@ import { IoLogOutOutline } from 'react-icons/io5';
 
 export const Registro: React.FC = () => {
     const { user } = useUser();
-    console.log(user);
+    // console.log(user);
     return (
         <>
             {!user && (

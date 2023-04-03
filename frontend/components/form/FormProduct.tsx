@@ -3,7 +3,8 @@ import { addProduct, updateProduct } from '../../lib/api';
 import { firstLetterToUpper } from '../../lib/firstLetterToUpper';
 import { interfaceProduct } from "../../types/interfaceProduct";
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { ButtonAdd } from './buttons/ButtonAdd';
+import { ButtonUpdate } from './buttons/ButtonUpdate';
 
 
 export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product }) => {
@@ -11,7 +12,6 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
         register,
         handleSubmit,
         reset,
-        watch,
         setValue,
         formState: { errors },
     } = useForm();
@@ -27,7 +27,7 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
     const onSubmit = handleSubmit(async (data) => {
         console.log(data);
         const { nameProduct, description, priceVentaClient, priceCompra } = data;
-        const transformedData = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description), priceVentaClient, priceCompra, active: true };
+        const transformedData = { nameProduct: firstLetterToUpper(nameProduct), description: firstLetterToUpper(description) };
 
         const product = await addProduct({ ...transformedData, priceVentaClient, priceCompra, active: true });
 
@@ -50,27 +50,22 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
             });
 
             console.log('Su producto se ha actualizado adecuadamente', product);
-
-            /*const router = useRouter();
-            router.push('/admin/productos');*/
+            reset();
         });
 
     return (
-        <><div className='flex  pl-10 pt-10 font-bold text-2xl'>Añadir producto:</div>
+        <>
 
-            <div className='min-h-[790px] flex justify-center items-center '>
-
-                <form method='post' className='w-[16rem] h-80 d-flex bg-slate-400 rounded  py-5 px-5' onSubmit={product ? onUpdate(product._id) : onSubmit}>
-
+            <div className='min-h-[740px] flex justify-center items-center '>
+                <form method='post' className='w-[16rem] h-90 d-flex bg-slate-400 rounded  py-5 px-5' onSubmit={product ? onUpdate(product._id) : onSubmit}>
 
                     <div className='flex flex-col gap-5'>
 
-                        <div className=''>
+                        <div>
                             <label htmlFor='nameProduct' className='form-label bg-azul px-3 py-1 rounded'>
                                 Nombre del producto:
                             </label>
                             <input
-
                                 name="nameProduct"
                                 type='text'
                                 id='nameProduct'
@@ -79,12 +74,11 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                                 className='form-control border-2 rounded text-center '
                             />
                         </div>
-                        <div className=''>
+                        <div>
                             <label htmlFor='description' className='form-label bg-azul px-3 py-1 rounded '>
                                 Descripción:
                             </label>
                             <input
-
                                 name="description"
                                 type='text'
                                 id='description'
@@ -95,10 +89,9 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                         </div>
                         <div>
                             <label htmlFor='priceVentaClient' className='form-label bg-azul px-3 py-1 rounded text-center'>
-                                Precio de venta al cleinte:
+                                Precio de venta:
                             </label>
                             <input
-
                                 name="priceVentaClient"
                                 type='text'
                                 id='priceVentaClient'
@@ -112,7 +105,6 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                                 Precio de Compra:
                             </label>
                             <input
-
                                 name="priceCompra"
                                 type='text'
                                 id='priceCompra'
@@ -121,26 +113,8 @@ export const FormProduct: React.FC<{ product?: interfaceProduct; }> = ({ product
                                 className='form-control border-2 rounded text-center'
                             />
                         </div>
-                        {!product && (
-                            <div className=' flex justify-end '>
-                                <button
-                                    type='submit'
-                                    className=' text-xl font-medium border-slate-200 px-5 py-3 bg-azul  hover:border-azul hover:bg-rosa hover:text-[22px] duration-500  border-2 rounded-lg '
-                                >
-                                    Añadir
-                                </button>
-                            </div>
-                        )}
-                        {product &&
-                            (<div className=' flex justify-end '>
-                                <button
-                                    type='submit'
-                                    className=' text-xl font-medium border-slate-200 px-5 py-3 bg-azul  hover:border-azul hover:bg-rosa hover:text-[22px] duration-500  border-2 rounded-lg '
-                                >
-                                    Actualizar
-                                </button>
-                            </div>)
-                        }
+                        {!product && (<ButtonAdd />)}
+                        {product && (<ButtonUpdate />)}
                     </div>
                 </form>
             </div>
